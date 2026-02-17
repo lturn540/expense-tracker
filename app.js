@@ -220,7 +220,7 @@ async function loadExpenses() {
         state.expenses = rows.map((row, index) => ({
             rowIndex: index + 2,
             date: row[COL.DATE] || '',
-            amount: parseFloat(row[COL.AMOUNT]) || 0,
+            amount: parseAmount(row[COL.AMOUNT]),
             whoPaid: row[COL.WHO_PAID] || '',
             category: row[COL.CATEGORY] || '',
             notes: row[COL.NOTES] || '',
@@ -1221,6 +1221,14 @@ function showToast(message, type = 'info') {
 // ============================================================
 // Utilities
 // ============================================================
+
+function parseAmount(val) {
+    // Handle currency-formatted strings like "$1,234.56" or "1234.56"
+    if (!val) return 0;
+    const cleaned = String(val).replace(/[$,\s]/g, '');
+    const num = parseFloat(cleaned);
+    return isNaN(num) ? 0 : num;
+}
 
 function formatCurrency(amount) {
     return '$' + amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
