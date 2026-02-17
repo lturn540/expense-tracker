@@ -1,12 +1,12 @@
 // Service Worker for Expense Tracker PWA
 const CACHE_NAME = 'expense-tracker-v1';
 const STATIC_ASSETS = [
-    '/',
-    '/index.html',
-    '/app.js',
-    '/manifest.json',
-    '/icons/icon-192.png',
-    '/icons/icon-512.png',
+    '/expense-tracker/',
+    '/expense-tracker/index.html',
+    '/expense-tracker/app.js',
+    '/expense-tracker/manifest.json',
+    '/expense-tracker/icons/icon-192.png',
+    '/expense-tracker/icons/icon-512.png',
 ];
 
 // External resources to cache

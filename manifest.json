@@ -2,7 +2,7 @@
     "name": "Expense Tracker",
     "short_name": "Expenses",
     "description": "Shared expense tracker for Gigi & Luke",
-    "start_url": "/",
+    "start_url": "/expense-tracker/",
     "display": "standalone",
     "background_color": "#f9fafb",
     "theme_color": "#4f46e5",
